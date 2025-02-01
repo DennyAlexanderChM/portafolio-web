@@ -69,7 +69,3 @@ El proyecto está configurado con Vite para el desarrollo y construcción.
 1. Clona el repositorio.
 2. Instala las dependencias con `npm install`.
 3. Inicia el servidor de desarrollo con `npm run dev`.
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT.

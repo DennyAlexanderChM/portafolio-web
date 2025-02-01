@@ -1,0 +1,176 @@
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.dark-mode {
+  background-color: #222;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar.dark-mode .navbar-logo {
+  color: #fff;
+}
+
+/* Estilos para los Enlaces */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.nav-links {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar.dark-mode .nav-links {
+  color: #fff;
+}
+
+/* Efecto Hover (Subrayado Animado) */
+.nav-links::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #61dafb;
+  transition: width 0.3s ease;
+}
+
+.nav-links:hover::after {
+  width: 100%;
+}
+
+/* Estilo Activo */
+.nav-links.active {
+  color: #61dafb;
+}
+
+.nav-links.active::after {
+  width: 100%;
+}
+
+/* Botón de Tema Mejorado */
+.theme-toggle {
+  background-color: #61dafb;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #4fa8c7;
+  transform: scale(1.1);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.navbar.dark-mode .theme-icon {
+  color: #fff;
+}
+
+/* Menú Hamburguesa (Responsivo) */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.navbar.dark-mode .menu-icon {
+  color: #fff;
+}
+
+/* Estilos para Móviles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: #fff;
+    padding: 2rem 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    background-color: #f9f9f9;
+  }
+
+  .navbar.dark-mode .nav-menu {
+    background-color: #333;
+  }
+
+  .navbar.dark-mode .nav-menu.active {
+    background-color: #444;
+  }
+
+  .nav-item {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .nav-links {
+    padding: 1rem;
+    display: block;
+  }
+
+  .nav-links::after {
+    display: none;
+  }
+}
